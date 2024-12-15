@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Muhammad Ahmad | Data Science Innovator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFD93D;
+            --background-color: #1A1A2E;
+            --text-color: #E0E0E0;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'VT323', monospace;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .retro-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .glitch-text {
+            position: relative;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--secondary-color);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--accent-color);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(63px, 9999px, 54px, 0); }
+            25% { clip: rect(4px, 9999px, 33px, 0); }
+            50% { clip: rect(83px, 9999px, 64px, 0); }
+            75% { clip: rect(34px, 9999px, 23px, 0); }
+            100% { clip: rect(48px, 9999px, 92px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(29px, 9999px, 83px, 0); }
+            25% { clip: rect(54px, 9999px, 13px, 0); }
+            50% { clip: rect(13px, 9999px, 44px, 0); }
+            75% { clip: rect(73px, 9999px, 54px, 0); }
+            100% { clip: rect(38px, 9999px, 92px, 0); }
+        }
+
+        .retro-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .retro-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+        }
+
+        .retro-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .retro-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 100px 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(78, 205, 196, 0.1),
+                rgba(78, 205, 196, 0.1) 10px,
+                rgba(255, 107, 107, 0.1) 10px,
+                rgba(255, 107, 107, 0.1) 20px
+            );
+        }
+
+        .data-science-tagline {
+            max-width: 800px;
+            margin: 20px 0;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .retro-skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .retro-skill {
+            background-color: rgba(78, 205, 196, 0.1);
+            border: 2px dashed var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .retro-skill:hover {
+            transform: scale(1.05);
+            background-color: rgba(78, 205, 196, 0.2);
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .tech-badge {
+            background-color: rgba(255, 107, 107, 0.2);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .retro-project {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .retro-project-card {
+            background-color: rgba(255, 217, 61, 0.1);
+            border: 2px solid var(--accent-color);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .retro-project-card:hover {
+            box-shadow: 0 0 15px rgba(255, 217, 61, 0.5);
+        }
+
+        .vision-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .vision-item {
+            background-color: rgba(78, 205, 196, 0.1);
+            border: 2px dashed var(--secondary-color);
+            padding: 20px;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            text-align: center;
+            padding: 50px 0;
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+
+        .crt-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            animation: crt 0.1s infinite alternate;
+        }
+
+        @keyframes crt {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100% 0, 0 100%; }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .retro-skills, .retro-project, .vision-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="crt-effect"></div>
+    <div class="retro-container">
+        <header class="retro-header">
+            <h1 class="glitch-text" data-text="MUHAMMAD AHMAD">MUHAMMAD AHMAD</h1>
+            <nav class="retro-nav">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#vision">Vision</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="retro-hero">
+            <h2 class="glitch-text" data-text="DATA SCIENCE INNOVATOR">DATA SCIENCE INNOVATOR</h2>
+            <p class="data-science-tagline">
+                Transforming complex data landscapes into strategic narratives, 
+                bridging the gap between raw information and intelligent decision-making
+            </p>
+        </section>
+
+        <section id="skills" class="retro-skills">
+            <div class="retro-skill">
+                <h3>Data Science</h3>
+                <p>Advanced analytics and predictive modeling to unlock hidden insights</p>
+            </div>
+            <div class="retro-skill">
+                <h3>Machine Learning</h3>
+                <p>Developing intelligent systems that learn, adapt, and predict</p>
+            </div>
+            <div class="retro-skill">
+                <h3>Generative AI</h3>
+                <p>Pioneering AI solutions that push the boundaries of innovation</p>
+            </div>
+        </section>
+
+        <div class="tech-stack">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">SQL</span>
+            <span class="tech-badge">TensorFlow</span>
+            <span class="tech-badge">scikit-learn</span>
+            <span class="tech-badge">Power BI</span>
+            <span class="tech-badge">Pandas</span>
+        </div>
+
+        <section id="projects" class="retro-project">
+            <div class="retro-project-card">
+                <h3>Los Angeles Crimes Analysis</h3>
+                <p>Comprehensive crime data visualization and spatial analysis using advanced statistical techniques</p>
+            </div>
+            <div class="retro-project-card">
+                <h3>Professor Insights</h3>
+                <p>Machine learning model for predicting academic performance and student engagement</p>
+            </div>
+        </section>
+
+        <section id="vision" class="vision-section">
+            <h2 class="glitch-text" data-text="FUTURE VISION">FUTURE VISION</h2>
+            <div class="vision-grid">
+                <div class="vision-item">
+                    <h3>Ethical AI Development</h3>
+                    <p>Creating AI systems that prioritize transparency, fairness, and social responsibility</p>
+                </div>
+                <div class="vision-item">
+                    <h3>Interdisciplinary Innovation</h3>
+                    <p>Bridging data science with domain expertise to solve complex real-world challenges</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="glitch-text" data-text="LET'S CONNECT">LET'S CONNECT</h2>
+            <p>Interested in collaboration or have a challenging data problem?</p>
+            <a href="mailto:ahmad.bsds@gmail.com" class="retro-nav" style="margin-top: 20px;">Send an Email</a>
+        </section>
+    </div>
+</body>
+</html>
